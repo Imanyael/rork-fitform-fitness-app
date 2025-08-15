@@ -34,6 +34,10 @@ function RootLayoutNav() {
         headerBackVisible: false,
         gestureEnabled: false
       }} />
+      <Stack.Screen name="backend-test" options={{ 
+        title: "Backend Test",
+        presentation: "modal"
+      }} />
     </Stack>
   );
 }

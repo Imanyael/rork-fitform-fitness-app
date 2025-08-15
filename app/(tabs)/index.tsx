@@ -16,9 +16,14 @@ export default function DashboardScreen() {
 
   useFocusEffect(
     useCallback(() => {
-      if (!isLoading && !isOnboarded) {
-        router.replace('/onboarding');
-      }
+      // Add a small delay to ensure router is ready
+      const timer = setTimeout(() => {
+        if (!isLoading && !isOnboarded) {
+          router.replace('/onboarding');
+        }
+      }, 100);
+      
+      return () => clearTimeout(timer);
     }, [isLoading, isOnboarded, router])
   );
 

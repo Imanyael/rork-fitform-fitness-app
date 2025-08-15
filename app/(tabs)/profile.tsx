@@ -104,6 +104,14 @@ export default function ProfileScreen() {
               <Text style={styles.settingText}>About</Text>
               <ChevronRight size={20} color="#8E8E93" />
             </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={styles.settingRow} 
+              onPress={() => router.push('/backend-test')}
+            >
+              <Text style={styles.settingText}>Backend Test</Text>
+              <ChevronRight size={20} color="#8E8E93" />
+            </TouchableOpacity>
           </View>
 
           {/* Logout */}
