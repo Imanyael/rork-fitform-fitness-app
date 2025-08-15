@@ -1,9 +1,9 @@
-import { createTRPCRouter } from "./create-context";
-import hiRoute from "./routes/example/hi/route";
-import createWorkoutRoute from "./routes/workouts/create/route";
-import listWorkoutsRoute from "./routes/workouts/list/route";
-import userStatsRoute from "./routes/users/stats/route";
-import userProfileRoute from "./routes/users/profile/route";
+import { createTRPCRouter } from "./create-context.js";
+import hiRoute from "./routes/example/hi/route.js";
+import createWorkoutRoute from "./routes/workouts/create/route.js";
+import listWorkoutsRoute from "./routes/workouts/list/route.js";
+import userStatsRoute from "./routes/users/stats/route.js";
+import userProfileRoute from "./routes/users/profile/route.js";
 
 export const appRouter = createTRPCRouter({
   example: createTRPCRouter({

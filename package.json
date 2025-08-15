@@ -2,13 +2,19 @@
   "name": "expo-app",
   "main": "expo-router/entry",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "start": "bunx rork start -p r7qbby389jccw5ml569c9 --tunnel",
     "start-web": "bunx rork start -p r7qbby389jccw5ml569c9 --web --tunnel",
-    "start-web-dev": "DEBUG=expo* bunx rork start -p r7qbby389jccw5ml569c9 --web --tunnel"
+    "start-web-dev": "DEBUG=expo* bunx rork start -p r7qbby389jccw5ml569c9 --web --tunnel",
+    "build": "npx expo export --platform web",
+    "build:backend": "npx tsc --project backend/tsconfig.json",
+    "start:backend": "node --experimental-specifier-resolution=node backend/dist/server.js",
+    "dev:backend": "tsx backend/server.ts"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
+    "@hono/node-server": "^1.12.0",
     "@hono/trpc-server": "^0.4.0",
     "@nkzw/create-context-hook": "^1.1.0",
     "@react-native-async-storage/async-storage": "2.1.2",
@@ -53,7 +59,11 @@
     "@babel/core": "^7.25.2",
     "@expo/ngrok": "^4.1.0",
     "@types/react": "~19.0.10",
+    "tsx": "^4.19.2",
     "typescript": "~5.8.3"
   },
-  "private": true
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
